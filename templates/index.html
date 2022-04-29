@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banker's Algorithm using queue data structure</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    
+    <style>
+      body{
+          width: 100%;
+          height: 100%;
+          color: #fff;
+          background:  linear-gradient(-45deg, #ecb211, #f38e6f, #f071a1, white, #53c4ec, hsl(171, 100%, 41%), #ecb211);
+          background-size: 400% 400%;
+          position: relative;
+          animation: change 10s ease-in-out infinite;
+      }
+
+
+      @keyframes change{
+          0%{
+              background-position: 0% 50%;
+          }
+          50%{
+              background-position: 100% 50%;
+          }
+          100%{
+              background-position: 0% 50%;
+          }
+      }
+      .navbar{
+        background-color: hsl(171, 100%, 41%);
+      }
+  </style>
+  </head>
+
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="{{ url_for('static', filename='account_balance_black_24dp.svg') }}" width="50" height="128">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/">
+              Home
+            </a>
+      
+            <a class="navbar-item" href="https://afteracademy.com/blog/what-is-bankers-algorithm" target="_blank">
+              Documentation
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  About
+                </a>
+                <a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary" href="https://github.com/sumit-6/Banker-s-Algorithm-Visualizer" target="_blank">
+                  <strong>Help me</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section class="section is-medium">
+        <h1 class="title">Banker's Algorithm Simulation</h1>
+        <h2 class="subtitle">
+          A website that describes the implementation of Banker's Algorithm using <strong>queue</strong> datastructure.
+        </h2>
+      </section>
+    <!--<script src="app.js"></script>-->
+
+
+
+    <section class="section">
+      <div class="card" style="margin:auto; width:85%">
+      <article class="message is-dark is-medium" style="background-color:hsl(171, 100%, 41%)">
+        <div class="message-body">
+          Banker's Algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation of predetermined maximum possible amounts of all resources, and then makes an "safe-state" check to test for possible deadlock conditions for all other pending activities, before deciding whether allocation should be allowed to continue.
+        </div>
+      </article>
+    </div>
+    </section>
+
+
+
+
+    <section class="section">
+      <div class="container">
+          <div class="columns">
+              <div class="column is-three-fifths is-offset-one-fifth">
+                  <div class="card">
+                    <header class="card-header">
+                      <p class="card-header-title">
+                        Banker's Algorithm
+                      </p>
+                    </header>
+                      <div class="card-image">
+                          <figure class="image is-2by1">
+                              <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                          </figure>
+                      </div>
+                      <header class="card-header">
+                      <p class="card-header-title">
+                        Enter inputs
+                      </p>
+                      
+                      </header>
+                      
+                      <footer class="card-footer">
+                          <form method="post" action="/enter-values" target="_blank" class="card-footer-item">
+                              <label for="res" class="label is-small is-inline">Number of Resource types: </label>
+                              <div class="select is-rounded">
+                                  <select name="res">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                      <option value="6">6</option>
+                                      <option value="7">7</option>
+                                      <option value="8">8</option>
+                                      <option value="9">9</option>
+                                      <option value="10">10</option>
+                                  </select>
+                              </div>
+                              
+                          
+                              <label for="pro" class="label is-small is-inline">Number of Processes: </label>
+                              <div class="select is-rounded">
+                                  <select name="pro">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                      <option value="6">6</option>
+                                      <option value="7">7</option>
+                                      <option value="8">8</option>
+                                      <option value="9">9</option>
+                                      <option value="10">10</option>
+                                      <option value="11">11</option>
+                                      <option value="12">12</option>
+                                      <option value="13">13</option>
+                                      <option value="14">14</option>
+                                      <option value="15">15</option>
+                                      <option value="16">16</option>
+                                      <option value="17">17</option>
+                                      <option value="18">18</option>
+                                      <option value="19">19</option>
+                                      <option value="20">20</option>
+                                  </select>
+                              </div>
+                              <button id = "p2Button" class="is-info button card-footer-item is-medium" type="submit" style="margin: 1rem">Enter Values</button>
+                          </form>
+                      </footer>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <footer class="footer" style="background-color:hsl(171, 100%, 41%)">
+    <div class="content has-text-centered">
+      <p>
+        <strong class="button is-primary">A website made by 2 IT students of Delhi Technological University: Sumit Verma (2K20/IT/148) and Vaibhav Ajayy (2K20/IT/158)</strong>
+      </p>
+    </div>
+  </footer>
+  </body>
+</html>

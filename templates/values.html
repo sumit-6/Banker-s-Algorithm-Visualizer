@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banker's Algorithm using queue datastructure</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            background:  linear-gradient(-45deg, #ecb211, #f38e6f, #f071a1, white, #53c4ec, hsl(171, 100%, 41%), #ecb211);
+            background-size: 400% 400%;
+            position: relative;
+            animation: change 10s ease-in-out infinite;
+        }
+  
+  
+        @keyframes change{
+            0%{
+                background-position: 0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
+        }
+        .navbar,#content,#box{
+          background-color: hsl(171, 100%, 41%);
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="data" style="display:none">{{data}}</div>
+    <!--<span style="display:none">{{res_content}}</span>
+    <span style="display:none">{{pro_content}}</span>-->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="{{ url_for('static', filename='account_balance_black_24dp.svg') }}" width="50" height="128">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/">
+              Home
+            </a>
+      
+            <a class="navbar-item" href="https://afteracademy.com/blog/what-is-bankers-algorithm" target="_blank">
+              Documentation
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  About
+                </a>
+                <a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary" href="https://github.com/sumit-6/Banker-s-Algorithm-Visualizer" target="_blank">
+                  <strong>Help me</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <section id="content" class="content is-medium">
+        <h1 id="box" class="box title">Enter the values for all the fields</h1>
+      </section>
+      
+
+      <section class="section">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Component
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <form action="/play" method="post" target="_blank">
+                <span class="tag is-primary is-medium">Resouces</span>
+                <div id="resources" class="box"></div>
+                <span class="tag is-primary is-medium">Allocation of Processes</span>
+                <div id="processes-allocate" class="box"></div>
+                <span class="tag is-primary is-medium">Need of Processes</span>
+                <div id="processes-need" class="box"></div>
+                
+                    
+                <button type="submit" class="button is-primary">Play</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" style="background-color:hsl(171, 100%, 41%)">
+        <div class="content has-text-centered">
+          <p>
+            <strong class="button is-primary">A website made by 2 IT students of Delhi Technological University: Sumit Verma (2K20/IT/148) and Vaibhav Ajayy (2K20/IT/158)</strong>
+          </p>
+        </div>
+      </footer>
+    <script src="{{ url_for('static', filename='JavaScript/play.js') }}"></script>
+</body>
+</html>
