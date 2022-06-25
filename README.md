@@ -36,7 +36,6 @@ You can follow the steps provided below to start using this project:
    ```
    virtualenv env
    ```
-
 4. Enter into your environment using this command:
    ```
    env\Scripts\activate.bat
