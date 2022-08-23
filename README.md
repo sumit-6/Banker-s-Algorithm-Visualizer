@@ -62,3 +62,6 @@ You can follow the steps provided below to start using this project:
 ![Dynamic](https://github.com/sumit-6/Banker-s-Algorithm-Visualizer/blob/main/img/6.JPG)
 5. Deadlock detection example
 ![Genetic](https://github.com/sumit-6/Banker-s-Algorithm-Visualizer/blob/main/img/7.JPG)
+
+# Results💻
+[![Video](https://github.com/sumit-6/Banker-s-Algorithm-Visualizer/blob/main/img/1.JPG)](https://www.youtube.com/watch?v=PjeydkpBcDU&t)
