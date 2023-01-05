@@ -8,7 +8,7 @@ A website that describes the implementation of Banker's Algorithm using queue da
 # Description🧠
 This project includes simulation of Banker's Algorithm using double queue implementation (proposed by us).
 
-One button will be provided to the user on the home page along with two drop down option to select number of resources and number of proceses for which program will be simulating the algorithm.
+One button will be provided to the user on the home page along with two drop down option to select number of resources and number of processes for which program will be simulating the algorithm.
 
 After that you will be directed to a page where you will be providing the resource values along with allocation and need of processes.
 (For testing purpose, you can refer to input1.txt and input2.txt)
